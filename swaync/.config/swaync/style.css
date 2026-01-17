@@ -1,3 +1,5 @@
+/* Inspired from https://github.com/cebem1nt/dotfiles */
+
 @define-color background      #1e2030;
 @define-color text            #cad3f5;
 @define-color text-alt        #5b6078;
@@ -119,8 +121,8 @@
 }
 
 .control-center {
-	background: @background;
-	border-radius: 12px;
+	background: alpha(@background, 0.5);
+	border-radius: 15px;
 	margin: 8px 8px 8px 0px;
 	padding: 12px;
 }
@@ -138,7 +140,7 @@
 
 /* Notifications expanded-group */
 .notification-group {
-	margin: 0px 8px;
+	margin: 0;
 }
 
 .notification-group-headers {
