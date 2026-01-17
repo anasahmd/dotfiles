@@ -62,7 +62,7 @@
 		"escape": true
 	},
 	"clock": {
-		"format": "{:%I:%M %p} ",
+		"format": "{:%a %d • %I:%M %p} ",
 		"interval": 1,
 		"tooltip-format": "<tt>{calendar}</tt>",
 		"calendar": {
@@ -75,25 +75,46 @@
 		}
 	},
 	"network": {
-		"format-wifi": "",
-		"format-ethernet": "",
-		"format-disconnected": "",
-		"tooltip-format-disconnected": "Error",
-		"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-		"tooltip-format-ethernet": "{ifname} 🖧 ",
+		"format-wifi": "{icon} {essid}",
+		"format-ethernet": "󰈀  {ipaddr}",
+		"format-linked": "󰈂 {ifname} (No IP)",
+		"format-disconnected": "󰤮  Disconnected",
+		"tooltip-format-wifi": "Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}",
+		"format-icons": [
+			"󰤯",
+			"󰤟",
+			"󰤢",
+			"󰤥",
+			"󰤨"
+		],
 		"on-click": "kitty nmtui"
 	},
 	"bluetooth": {
-		"format-on": "󰂯",
-		"format-off": "BT-off",
+		"format": " {status}",
+		"format-on": "",
+		"format-off": "󰂲",
 		"format-disabled": "󰂲",
-		"format-connected-battery": "{device_battery_percentage}% 󰂯",
-		"format-alt": "{device_alias} 󰂯",
-		"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-		"tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
-		"tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
-		"on-click": "blueman-manager"
+		"format-connected": " {num_connections}",
+		"format-connected-battery": " {device_alias}",
+		"format-icons": [
+			"󰂎",
+			"󰁺",
+			"󰁻",
+			"󰁼",
+			"󰁽",
+			"󰁾",
+			"󰁿",
+			"󰂀",
+			"󰂁",
+			"󰂂",
+			"󰁹"
+		],
+		"tooltip-format": "Bluetooth: {status}",
+		"tooltip-format-connected": "Connected Devices ({num_connections}):\n\n{device_enumerate}",
+		"tooltip-format-enumerate-connected": " {device_alias}",
+		"tooltip-format-enumerate-connected-battery": "{icon} {device_alias} ({device_battery_percentage}%)",
+		"on-click": "blueman-manager",
+		"on-click-right": "rfkill toggle bluetooth"
 	},
 	"battery": {
 		"interval": 30,
@@ -114,17 +135,6 @@
 			"󰂂",
 			"󰁹"
 		]
-	},
-	"cpu": {
-		"format": "󰻠",
-		"tooltip": true
-	},
-	"memory": {
-		"format": ""
-	},
-	"temperature": {
-		"critical-threshold": 80,
-		"format": ""
 	},
 	"tray": {
 		"icon-size": 14,
