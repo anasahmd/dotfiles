@@ -63,6 +63,7 @@ tooltip {
 	padding: 0px 5px;
 	color: alpha(@blue, 0.4);
 	transition: all 0.2s ease;
+	cursor: pointer;
 }
 #workspaces button:hover {
 	color: rgba(0, 0, 0, 0);
