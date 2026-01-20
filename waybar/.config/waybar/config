@@ -87,7 +87,7 @@
 			"󰤥",
 			"󰤨"
 		],
-		"on-click": "kitty nmtui"
+		"on-click": "nm-connection-editor"
 	},
 	"bluetooth": {
 		"format": " {status}",

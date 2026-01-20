@@ -12,3 +12,6 @@ function fish_greeting
 
     echo -e "$maroon󰊠 $yellow󰊠 $green󰊠 $pink󰊠 $blue󰊠 $mauve󰊠 $reset"
 end
+
+zoxide init fish | source
+fzf --fish | source
