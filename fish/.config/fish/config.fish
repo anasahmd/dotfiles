@@ -13,5 +13,16 @@ function fish_greeting
     echo -e "$maroon󰊠 $yellow󰊠 $green󰊠 $pink󰊠 $blue󰊠 $mauve󰊠 $reset"
 end
 
-zoxide init fish | source
+if status is-interactive
+    # 1. Basic 'ls': Icons + Folders First + Grid View
+    alias ls 'eza --icons --group-directories-first'
+
+    # 2. Detailed 'll': Headers + Git Status + Permissions + Size
+    alias ll 'eza --icons --group-directories-first -l --git --header --time-style=relative'
+
+    # 3. Tree View 'lt': Shows folder structure
+    alias lt 'eza --icons --tree --level=2'
+end
+
+zoxide init fish --cmd cd | source
 fzf --fish | source
