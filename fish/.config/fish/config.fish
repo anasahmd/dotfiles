@@ -26,3 +26,7 @@ end
 
 zoxide init fish --cmd cd | source
 fzf --fish | source
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /home/anas/.lmstudio/bin
+# End of LM Studio CLI section
+
